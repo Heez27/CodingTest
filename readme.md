@@ -44,11 +44,9 @@ data = list(map(int, input('').split())) # 위 방법에서, list()만 붙여주
 data.sort() # 리스트 정렬하기
 
 ```
- 
-##### 4) 숫자 카드 게임: n x m 형태의 카드에서 각 행의 가장 작은 값 중 가장 큰 값을 찾아야함
    
 ```python
-# Q3) 숫자 카드 게임
+# Q3) 숫자 카드 게임: n x m 형태의 카드에서 각 행의 가장 작은 값 중 가장 큰 값을 찾아야함
 
 # NxM 행렬일 때, 각 행을 따로 입력 받을 수 있음
 for i in range(n):
@@ -61,8 +59,6 @@ row.append(min(data)) # data라는 리스트의 최솟값을 row라는 리스트
 result = max(result, min(data)) # result라는 정수와 min(data)라는 정수를 비교해, 더 큰값을 result에 넣음
 
 ```
-
-##### 5) 1이 될 때까지
 
 ```python
 # Q4) 1이 될 때까지
@@ -138,7 +134,38 @@ for step in steps:
 
 ```
 
-### ch5. DFS/BFS
+```python
+# Q5) 게임 개발!! (못풂..)
+
+```
+
+### ch5. DFS/BFS 
+##### 1) DFS/BFS는 대표적인 탐색 알고리즘
+##### 2) 스택(First in Last out), 큐(First in First out), 재귀함수 이해 필요 
+
+```python
+# 스택: 리스트로 표현, First in last out
+stack = []
+
+# 삽입(7)
+stack.append(7)
+
+#삭제()
+stack.pop()
+
+```
+
+```python
+# 큐: deque로 표현, First in First out
+from collections import deque
+queue = deque()
+
+# 삽입(7)
+queue.append(7)
+
+#삭제
+queue.popleft()
+```
 
 ### ch6. 정렬
 
