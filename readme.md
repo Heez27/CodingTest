@@ -67,7 +67,7 @@ result = max(result, min(data)) # result라는 정수와 min(data)라는 정수�
 ```python
 # Q4) 1이 될 때까지
 
-# 무한 반복을 위해 while True 문 사용
+# 무한 반복을 위해 while True 사용
 while True:
     if n == 1:
         break
@@ -101,6 +101,41 @@ for plan in plans:
             temp_x = loc[0] + dx[i]
             temp_y = loc[1] + dy[i]
    
+```
+
+
+```python
+# Q2) 시각
+
+# 변수값이 int인지 string인지 확인 잘하기!!
+result = int(n) # n을 정수로 바꿔줌
+result = str(n) # n을 string으로 바꿔줌
+
+# string을 append할 때, +기호 사용
+time = str(i)+str(j)+str(k)
+
+# string의 find함수를 이용해, 특정 string의 index값 혹은 존재 여부를 알 수 있음
+if time.find('3') != -1: # time이라는 string에 '3'이라는 문자가 있으면 index값을 반환, 없으면 -1반환
+    count += 1
+
+# str
+if '3' in str(i)+str(j)+str(k): # '3'이 str(i)+str(j)+str(k)에 있는지 확인
+    count += 1
+```
+<br>
+
+```python
+# Q3) 왕실의 나이트
+
+#ord함수로 ascii코드를 정수값으로
+x = ord(loc[0])-ord('a')+1 # loc은 2자리 문자열
+
+# 8가지 방향 정의 후, for문에서 사용
+steps = [(-2,-1), (-2,1), (2,-1), (2,1), (-1,2), (-1,-2), (1,2),(1,-2)]
+for step in steps:
+    temp_x = x + step[0]
+    temp_y = y + step[1]
+
 ```
 
 ### ch5. DFS/BFS
