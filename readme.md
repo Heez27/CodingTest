@@ -144,7 +144,7 @@ for step in steps:
 ##### 2) 스택(First in Last out), 큐(First in First out), 재귀함수 이해 필요 
 
 ```python
-# 스택: 리스트로 표현, First in last out
+# 1. 스택: 리스트로 표현, First in last out
 stack = []
 
 # 삽입(7)
@@ -156,7 +156,7 @@ stack.pop()
 ```
 
 ```python
-# 큐: deque로 표현, First in First out
+# 2. 큐: deque로 표현, First in First out
 from collections import deque
 queue = deque()
 
@@ -165,6 +165,66 @@ queue.append(7)
 
 #삭제
 queue.popleft()
+```
+
+```python
+# 3. 재귀 함수
+
+def recursive_function(i):
+    # 50번째 출력했을 때, 종료되도록 종료 조건 명시
+    if i==3:
+        return
+    print(i,'번째 재귀 함수에서', i+1,'번째 재귀 함수를 호출합니다.')
+    recursive_function(i+1)
+    print(i, '번째 재귀 함수에서 재귀함수를 종료합니다.')
+
+recursive_function(1)
+
+# 실행결과:
+# 1 번째 재귀 함수에서 2 번째 재귀 함수를 호출합니다.
+# 2 번째 재귀 함수에서 3 번째 재귀 함수를 호출합니다.
+# 2 번째 재귀 함수에서 재귀함수를 종료합니다.
+# 1 번째 재귀 함수에서 재귀함수를 종료합니다.
+```
+```python
+# 4. for문으로 구현한 n!
+def factorial_iterative(n):
+    result = 1
+    # 1부터 n까지의 수를 차례대로 곱하기
+    for i in range(1,n+1):
+        result *= i
+    return result
+
+
+# 재귀함수로 구현한 n!
+def factorial_recursive(n):
+    if n <= 1: # n이 1 이하인 경우 1을 반환
+        return 1
+    return n * factorial_recursive(n-1)
+
+# n! = n * (n-1)!
+print('for문으로 구현:', factorial_iterative(5))
+print('재귀함수로 구현:', factorial_recursive(5))
+```
+
+```python
+# 5. 행(Row)이 3개인 2차원 리스트로 인접 리스트 표현
+graph = [[] for _ in range(3)] # print(graph) 실행결과: [[], [], []]
+
+# 노드 0에 연결된 노드 정보 저장(노드, 거리)
+graph[0].append((1,7)) # 0노드와 1노드가 연결, 거리는 7
+graph[0].append((2,5)) # 0노드와 2노드가 연결, 거리는 5
+
+# 노드 1에 연결된 노드 정보 저장(노드, 거리)
+graph[1].append((0,7)) # 1노드와 0노드가 연결, 거리는 7
+
+# 노드 2에 연결된 노드 정보 저장(노드, 거리)
+graph[2].append((0,5)) # 2노드와 0노드가 연결, 거리는 5
+
+
+print(graph)
+
+# 실행 결과: [[(1, 7), (2, 5)], [(0, 7)], [(0, 5)]]
 ```
 
 ### ch6. 정렬
